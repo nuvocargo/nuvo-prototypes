@@ -4831,13 +4831,13 @@
       const carrierRows = (c.carriers || []).map(function(cr) {
         const carrierIdx = carriers.findIndex(function(k) { return k.name === cr.name; });
         const nameHtml = carrierIdx >= 0
-          ? '<a onclick="closeConsigneePanel();openCarrierPage(' + carrierIdx + ')" style="cursor:pointer;color:#ccc;text-decoration:none;" onmouseover="this.style.color=\'#22c55e\'" onmouseout="this.style.color=\'#ccc\'">' + cr.name + '</a>'
-          : '<span style="color:#ccc;">' + cr.name + '</span>';
+          ? '<a onclick="closeConsigneePanel();openCarrierPage(' + carrierIdx + ')" style="cursor:pointer;color:var(--text);text-decoration:none;" onmouseover="this.style.color=\'#22c55e\'" onmouseout="this.style.color=\'var(--text)\'">' + cr.name + '</a>'
+          : '<span style="color:var(--text);">' + cr.name + '</span>';
         return '<tr>' +
-          '<td style="font-size:12px;font-weight:500;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);">' + nameHtml + '</td>' +
-          '<td style="font-size:12px;color:var(--text-secondary);text-align:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);">' + cr.loads + ' loads</td>' +
-          '<td style="text-align:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);">' + pc(cr.otp) + '</td>' +
-          '<td style="text-align:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);">' + pc(cr.otd) + '</td>' +
+          '<td style="font-size:12px;font-weight:500;padding:8px 0;border-bottom:1px solid var(--border);">' + nameHtml + '</td>' +
+          '<td style="font-size:12px;color:var(--text-secondary);text-align:center;padding:8px 0;border-bottom:1px solid var(--border);">' + cr.loads + ' loads</td>' +
+          '<td style="text-align:center;padding:8px 0;border-bottom:1px solid var(--border);">' + pc(cr.otp) + '</td>' +
+          '<td style="text-align:center;padding:8px 0;border-bottom:1px solid var(--border);">' + pc(cr.otd) + '</td>' +
         '</tr>';
       }).join('');
 
@@ -4845,12 +4845,12 @@
         '<div class="opp-panel-section-label" style="margin-top:20px;margin-bottom:10px;">Carriers Servicing This Consignee</div>' +
         '<table style="width:100%;border-collapse:collapse;">' +
           '<thead><tr>' +
-            '<th style="font-size:10px;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:0.5px;padding:0 0 8px;text-align:left;">Carrier</th>' +
-            '<th style="font-size:10px;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:0.5px;padding:0 0 8px;text-align:center;">Loads</th>' +
-            '<th style="font-size:10px;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:0.5px;padding:0 0 8px;text-align:center;">OTP</th>' +
-            '<th style="font-size:10px;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:0.5px;padding:0 0 8px;text-align:center;">OTD</th>' +
+            '<th style="font-size:10px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px;padding:0 0 8px;text-align:left;">Carrier</th>' +
+            '<th style="font-size:10px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px;padding:0 0 8px;text-align:center;">Loads</th>' +
+            '<th style="font-size:10px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px;padding:0 0 8px;text-align:center;">OTP</th>' +
+            '<th style="font-size:10px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px;padding:0 0 8px;text-align:center;">OTD</th>' +
           '</tr></thead>' +
-          '<tbody style="border-top:1px solid rgba(255,255,255,0.06);">' + carrierRows + '</tbody>' +
+          '<tbody style="border-top:1px solid var(--border);">' + carrierRows + '</tbody>' +
         '</table>';
     }
 
