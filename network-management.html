@@ -550,7 +550,7 @@
     .insight-item-content { flex:1; }
     .insight-item-title { font-size:13px; font-weight:600; color:var(--text); margin-bottom:4px; }
     .insight-item-body { font-size:12px; color:var(--text-secondary); line-height:1.6; }
-    .lane-facility-label { background:rgba(18,18,18,0.96); border-radius:10px; padding:10px 14px; box-shadow:0 4px 20px rgba(0,0,0,0.65); pointer-events:none; white-space:nowrap; }
+    .lane-facility-label { display:inline-block; background:rgba(18,18,18,0.96); border-radius:10px; padding:10px 14px; box-shadow:0 4px 20px rgba(0,0,0,0.65); pointer-events:none; white-space:nowrap; }
     .lane-facility-label .lfl-name { font-size:13px; font-weight:700; color:#fff; }
     .lane-facility-label .lfl-sub { font-size:11px; color:#888; margin-top:3px; }
     .lane-bottom-bar { position:absolute; bottom:0; left:0; right:0; background:rgba(16,16,16,0.97); border-top:1px solid rgba(255,255,255,0.1); padding:14px 20px; z-index:900; display:flex; align-items:center; justify-content:space-between; gap:16px; backdrop-filter:blur(4px); }
@@ -3269,7 +3269,7 @@
           '<div class="lane-facility-label">' +
             '<div class="lfl-name">' + facility.displayName + '</div>' +
           '</div>';
-        const icon = L.divIcon({ className: '', html: html, iconAnchor: anchor });
+        const icon = L.divIcon({ className: '', html: html, iconAnchor: anchor, iconSize: [0, 0] });
         const m = L.marker(coords, { icon: icon, interactive: false }).addTo(_networkMapInstance);
         _laneLabelLayers.push(m);
       }
@@ -3322,7 +3322,7 @@
         '<div class="lane-facility-label">' +
           '<div class="lfl-name">' + f.displayName + '</div>' +
         '</div>';
-      const icon = L.divIcon({ className: '', html: html, iconAnchor: [-12, 8] });
+      const icon = L.divIcon({ className: '', html: html, iconAnchor: [-12, 8], iconSize: [0, 0] });
       const labelMarker = L.marker(coords, { icon: icon, interactive: false }).addTo(_networkMapInstance);
       _laneLabelLayers.push(labelMarker);
 
